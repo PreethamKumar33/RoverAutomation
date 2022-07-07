@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220707 11:44:39.104" rpa="false" schemaversion="3">
+<suite id="s1" name="Upload Test" source="C:\Users\PreethamKumarB\Desktop\RoverAutomation\tests\upload_test.robot">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Start Sikuli Process</arg>
+<arg>AND</arg>
+<arg>Initialize all Images</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Start Sikuli Process" library="SikuliLibrary">
+<msg timestamp="20220707 11:44:39.390" level="INFO">Starting process:
+java -jar C:\Python310\lib\site-packages\SikuliLibrary\lib\SikuliLibrary.jar 49297 C:\Users\PreethamKumarB\Desktop\RoverAutomation\tests</msg>
+<msg timestamp="20220707 11:44:39.412" level="INFO">Start sikuli java process on port 49297</msg>
+<msg timestamp="20220707 11:44:41.069" level="INFO">Sikuli java process is started</msg>
+<status status="PASS" starttime="20220707 11:44:39.383" endtime="20220707 11:44:43.697"/>
+</kw>
+<kw name="Initialize all Images" library="resource">
+<kw name="Add Image Path" library="SikuliLibrary">
+<arg>C:\\Users\\PreethamKumarB\\Desktop\\RoverAutomation\\tests${/}Sikuli_images.sikuli</arg>
+<doc>Add image path</doc>
+<status status="PASS" starttime="20220707 11:44:43.697" endtime="20220707 11:44:43.731"/>
+</kw>
+<status status="PASS" starttime="20220707 11:44:43.697" endtime="20220707 11:44:43.731"/>
+</kw>
+<status status="PASS" starttime="20220707 11:44:39.382" endtime="20220707 11:44:43.731"/>
+</kw>
+<test id="s1-t1" name="DummyTest" line="17">
+<kw name="Open Browser and Go to URL" library="resource" type="SETUP">
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>${BROWSER}</arg>
+<arg>executable_path=C:\\Users\\PreethamKumarB\\Desktop\\RoverAutomation\\tests${/}Driver${/}chromedriver</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220707 11:44:43.733" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220707 11:44:43.733" endtime="20220707 11:44:45.225"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220707 11:44:45.226" level="INFO">Opening url 'http://35.176.154.40/search'</msg>
+<status status="PASS" starttime="20220707 11:44:45.226" endtime="20220707 11:44:48.189"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220707 11:44:48.189" endtime="20220707 11:44:48.407"/>
+</kw>
+<status status="PASS" starttime="20220707 11:44:43.732" endtime="20220707 11:44:48.408"/>
+</kw>
+<kw name="Upload Documents Test">
+<arg>Lorem_ipsum.pdf</arg>
+<kw name="Click open button and upload the file" library="resource">
+<arg>${upload_doc}</arg>
+<kw name="Replace String" library="String">
+<var>${Doc_path}</var>
+<arg>C:\\Users\\PreethamKumarB\\Desktop\\RoverAutomation\\tests${/}Documents${/}${Upload_doc}</arg>
+<arg>/</arg>
+<arg>\\</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220707 11:44:48.412" level="INFO">${Doc_path} = C:\Users\PreethamKumarB\Desktop\RoverAutomation\tests\Documents\Lorem_ipsum.pdf</msg>
+<status status="PASS" starttime="20220707 11:44:48.411" endtime="20220707 11:44:48.413"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath://body[@class='mat-typography']/app-root//app-half-sidebar-open//div[@class='layout-column mini-right-side-bar ng-star-inserted']/button[3]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220707 11:44:48.415" level="INFO">Clicking button 'xpath://body[@class='mat-typography']/app-root//app-half-sidebar-open//div[@class='layout-column mini-right-side-bar ng-star-inserted']/button[3]'.</msg>
+<status status="PASS" starttime="20220707 11:44:48.414" endtime="20220707 11:44:48.541"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 11:44:49.547" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220707 11:44:48.541" endtime="20220707 11:44:49.547"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${filename_Image}</arg>
+<arg>${Doc_path}</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20220707 11:44:59.970" level="INFO">Input Text:
+C:\Users\PreethamKumarB\Desktop\RoverAutomation\tests\Documents\Lorem_ipsum.pdf</msg>
+<msg timestamp="20220707 11:44:59.970" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1657174491112.png'/&gt;
+[log] CLICK on L[200,416]@S(0) (572 msec)
+[log]  TYPE "C:\Users\PreethamKumarB\Desktop\RoverAutomation\tests\Documents\Lorem_ipsum.pdf"</msg>
+<status status="PASS" starttime="20220707 11:44:49.547" endtime="20220707 11:44:59.970"/>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<arg>ENTER</arg>
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<msg timestamp="20220707 11:45:00.100" level="INFO">[log]  TYPE "#ENTER."</msg>
+<status status="PASS" starttime="20220707 11:44:59.970" endtime="20220707 11:45:00.100"/>
+</kw>
+<status status="PASS" starttime="20220707 11:44:48.410" endtime="20220707 11:45:00.101"/>
+</kw>
+<kw name="Click Next Until You return to home" library="resource">
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 11:45:03.118" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220707 11:45:00.102" endtime="20220707 11:45:03.119"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>css:.btn-section-right [color]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220707 11:45:03.121" level="INFO">Clicking button 'css:.btn-section-right [color]'.</msg>
+<status status="PASS" starttime="20220707 11:45:03.120" endtime="20220707 11:45:03.257"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>css:.btn-section-right [color]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220707 11:45:03.258" level="INFO">Clicking button 'css:.btn-section-right [color]'.</msg>
+<status status="PASS" starttime="20220707 11:45:03.257" endtime="20220707 11:45:03.358"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 11:45:06.360" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220707 11:45:03.358" endtime="20220707 11:45:06.360"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>css:.btn-section-right [color]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220707 11:45:06.360" level="INFO">Clicking button 'css:.btn-section-right [color]'.</msg>
+<status status="PASS" starttime="20220707 11:45:06.360" endtime="20220707 11:45:06.506"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:00.101" endtime="20220707 11:45:06.506"/>
+</kw>
+<kw name="Check if the file is uploaded" library="resource">
+<arg>${Upload_doc}</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 11:45:08.518" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220707 11:45:06.508" endtime="20220707 11:45:08.518"/>
+</kw>
+<kw name="Split String" library="String">
+<var>@{Title_list}</var>
+<arg>${Upload_doc}</arg>
+<arg>.</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<msg timestamp="20220707 11:45:08.519" level="INFO">@{Title_list} = [ Lorem_ipsum | pdf ]</msg>
+<status status="PASS" starttime="20220707 11:45:08.518" endtime="20220707 11:45:08.519"/>
+</kw>
+<kw name="Get From List" library="Collections">
+<var>${Title}</var>
+<arg>${Title_list}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20220707 11:45:08.520" level="INFO">${Title} = Lorem_ipsum</msg>
+<status status="PASS" starttime="20220707 11:45:08.519" endtime="20220707 11:45:08.520"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Total_docs}</var>
+<arg>css:.search-results-count .results-info-main</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220707 11:45:08.550" level="INFO">${Total_docs} = 188</msg>
+<status status="PASS" starttime="20220707 11:45:08.520" endtime="20220707 11:45:08.550"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Total_docs}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220707 11:45:08.550" level="INFO">188</msg>
+<status status="PASS" starttime="20220707 11:45:08.550" endtime="20220707 11:45:08.550"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${total_views}</var>
+<arg>math.floor(${Total_docs}/10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220707 11:45:08.551" level="INFO">${total_views} = 18</msg>
+<status status="PASS" starttime="20220707 11:45:08.551" endtime="20220707 11:45:08.551"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${total_views}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220707 11:45:08.552" level="INFO">18</msg>
+<status status="PASS" starttime="20220707 11:45:08.552" endtime="20220707 11:45:08.552"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${total_views}</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${temp}</var>
+<arg>${i} * 10</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220707 11:45:08.554" level="INFO">${temp} = 10</msg>
+<status status="PASS" starttime="20220707 11:45:08.553" endtime="20220707 11:45:08.554"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Scroll Element Into View</arg>
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220707 11:45:08.554" endtime="20220707 11:45:08.862"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:08.554" endtime="20220707 11:45:08.862"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 11:45:09.871" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220707 11:45:08.862" endtime="20220707 11:45:09.871"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:08.553" endtime="20220707 11:45:09.871"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${temp}</var>
+<arg>${i} * 10</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220707 11:45:09.872" level="INFO">${temp} = 20</msg>
+<status status="PASS" starttime="20220707 11:45:09.871" endtime="20220707 11:45:09.872"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Scroll Element Into View</arg>
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220707 11:45:09.873" endtime="20220707 11:45:10.204"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:09.872" endtime="20220707 11:45:10.204"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 11:45:11.213" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220707 11:45:10.206" endtime="20220707 11:45:11.213"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:09.871" endtime="20220707 11:45:11.213"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${temp}</var>
+<arg>${i} * 10</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220707 11:45:11.215" level="INFO">${temp} = 30</msg>
+<status status="PASS" starttime="20220707 11:45:11.214" endtime="20220707 11:45:11.215"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Scroll Element Into View</arg>
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220707 11:45:11.216" endtime="20220707 11:45:11.526"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:11.215" endtime="20220707 11:45:11.527"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 11:45:12.535" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220707 11:45:11.527" endtime="20220707 11:45:12.535"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:11.214" endtime="20220707 11:45:12.535"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${temp}</var>
+<arg>${i} * 10</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220707 11:45:12.537" level="INFO">${temp} = 40</msg>
+<status status="PASS" starttime="20220707 11:45:12.536" endtime="20220707 11:45:12.537"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Scroll Element Into View</arg>
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220707 11:45:12.538" endtime="20220707 11:45:12.898"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:12.537" endtime="20220707 11:45:12.898"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 11:45:13.905" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220707 11:45:12.898" endtime="20220707 11:45:13.905"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:12.536" endtime="20220707 11:45:13.905"/>
+</iter>
+<iter>
+<var name="${i}">5</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${temp}</var>
+<arg>${i} * 10</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220707 11:45:13.907" level="INFO">${temp} = 50</msg>
+<status status="PASS" starttime="20220707 11:45:13.906" endtime="20220707 11:45:13.907"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Scroll Element Into View</arg>
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220707 11:45:13.908" endtime="20220707 11:45:14.283"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:13.908" endtime="20220707 11:45:14.283"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 11:45:15.288" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220707 11:45:14.283" endtime="20220707 11:45:15.288"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:13.906" endtime="20220707 11:45:15.288"/>
+</iter>
+<iter>
+<var name="${i}">6</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${temp}</var>
+<arg>${i} * 10</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220707 11:45:15.291" level="INFO">${temp} = 60</msg>
+<status status="PASS" starttime="20220707 11:45:15.290" endtime="20220707 11:45:15.291"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Scroll Element Into View</arg>
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220707 11:45:15.292" endtime="20220707 11:45:15.628"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:15.291" endtime="20220707 11:45:15.629"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 11:45:16.637" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220707 11:45:15.629" endtime="20220707 11:45:16.638"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:15.289" endtime="20220707 11:45:16.638"/>
+</iter>
+<iter>
+<var name="${i}">7</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${temp}</var>
+<arg>${i} * 10</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220707 11:45:16.639" level="INFO">${temp} = 70</msg>
+<status status="PASS" starttime="20220707 11:45:16.638" endtime="20220707 11:45:16.639"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Scroll Element Into View</arg>
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220707 11:45:16.640" endtime="20220707 11:45:16.965"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:16.640" endtime="20220707 11:45:16.966"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 11:45:17.972" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220707 11:45:16.966" endtime="20220707 11:45:17.972"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:16.638" endtime="20220707 11:45:17.972"/>
+</iter>
+<iter>
+<var name="${i}">8</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${temp}</var>
+<arg>${i} * 10</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220707 11:45:17.974" level="INFO">${temp} = 80</msg>
+<status status="PASS" starttime="20220707 11:45:17.973" endtime="20220707 11:45:17.974"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Scroll Element Into View</arg>
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220707 11:45:17.974" endtime="20220707 11:45:18.322"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:17.974" endtime="20220707 11:45:18.322"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 11:45:19.338" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220707 11:45:18.322" endtime="20220707 11:45:19.338"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:17.973" endtime="20220707 11:45:19.338"/>
+</iter>
+<iter>
+<var name="${i}">9</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${temp}</var>
+<arg>${i} * 10</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220707 11:45:19.340" level="INFO">${temp} = 90</msg>
+<status status="PASS" starttime="20220707 11:45:19.339" endtime="20220707 11:45:19.340"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Scroll Element Into View</arg>
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220707 11:45:19.341" endtime="20220707 11:45:19.698"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:19.340" endtime="20220707 11:45:19.700"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 11:45:20.711" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220707 11:45:19.700" endtime="20220707 11:45:20.711"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:19.339" endtime="20220707 11:45:20.712"/>
+</iter>
+<iter>
+<var name="${i}">10</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${temp}</var>
+<arg>${i} * 10</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220707 11:45:20.714" level="INFO">${temp} = 100</msg>
+<status status="PASS" starttime="20220707 11:45:20.712" endtime="20220707 11:45:20.715"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Scroll Element Into View</arg>
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220707 11:45:20.716" endtime="20220707 11:45:21.084"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:20.715" endtime="20220707 11:45:21.085"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 11:45:22.088" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220707 11:45:21.085" endtime="20220707 11:45:22.089"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:20.712" endtime="20220707 11:45:22.089"/>
+</iter>
+<iter>
+<var name="${i}">11</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${temp}</var>
+<arg>${i} * 10</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220707 11:45:22.090" level="INFO">${temp} = 110</msg>
+<status status="PASS" starttime="20220707 11:45:22.089" endtime="20220707 11:45:22.090"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Scroll Element Into View</arg>
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220707 11:45:22.092" endtime="20220707 11:45:22.480"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:22.090" endtime="20220707 11:45:22.480"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 11:45:23.491" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220707 11:45:22.480" endtime="20220707 11:45:23.491"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:22.089" endtime="20220707 11:45:23.491"/>
+</iter>
+<iter>
+<var name="${i}">12</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${temp}</var>
+<arg>${i} * 10</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220707 11:45:23.493" level="INFO">${temp} = 120</msg>
+<status status="PASS" starttime="20220707 11:45:23.492" endtime="20220707 11:45:23.493"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Scroll Element Into View</arg>
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220707 11:45:23.494" endtime="20220707 11:45:23.864"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:23.493" endtime="20220707 11:45:23.864"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 11:45:24.868" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220707 11:45:23.865" endtime="20220707 11:45:24.868"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:23.491" endtime="20220707 11:45:24.868"/>
+</iter>
+<iter>
+<var name="${i}">13</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${temp}</var>
+<arg>${i} * 10</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220707 11:45:24.870" level="INFO">${temp} = 130</msg>
+<status status="PASS" starttime="20220707 11:45:24.869" endtime="20220707 11:45:24.870"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Scroll Element Into View</arg>
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220707 11:45:24.870" endtime="20220707 11:45:25.274"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:24.870" endtime="20220707 11:45:25.274"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 11:45:26.281" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220707 11:45:25.274" endtime="20220707 11:45:26.281"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:24.869" endtime="20220707 11:45:26.281"/>
+</iter>
+<iter>
+<var name="${i}">14</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${temp}</var>
+<arg>${i} * 10</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220707 11:45:26.283" level="INFO">${temp} = 140</msg>
+<status status="PASS" starttime="20220707 11:45:26.282" endtime="20220707 11:45:26.283"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Scroll Element Into View</arg>
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220707 11:45:26.285" endtime="20220707 11:45:26.673"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:26.284" endtime="20220707 11:45:26.673"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 11:45:27.682" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220707 11:45:26.674" endtime="20220707 11:45:27.682"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:26.281" endtime="20220707 11:45:27.682"/>
+</iter>
+<iter>
+<var name="${i}">15</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${temp}</var>
+<arg>${i} * 10</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220707 11:45:27.683" level="INFO">${temp} = 150</msg>
+<status status="PASS" starttime="20220707 11:45:27.682" endtime="20220707 11:45:27.683"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Scroll Element Into View</arg>
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220707 11:45:27.684" endtime="20220707 11:45:28.108"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:27.684" endtime="20220707 11:45:28.108"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 11:45:29.114" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220707 11:45:28.108" endtime="20220707 11:45:29.114"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:27.682" endtime="20220707 11:45:29.114"/>
+</iter>
+<iter>
+<var name="${i}">16</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${temp}</var>
+<arg>${i} * 10</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220707 11:45:29.115" level="INFO">${temp} = 160</msg>
+<status status="PASS" starttime="20220707 11:45:29.114" endtime="20220707 11:45:29.115"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Scroll Element Into View</arg>
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220707 11:45:29.117" endtime="20220707 11:45:29.507"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:29.116" endtime="20220707 11:45:29.507"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 11:45:30.512" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220707 11:45:29.507" endtime="20220707 11:45:30.512"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:29.114" endtime="20220707 11:45:30.512"/>
+</iter>
+<iter>
+<var name="${i}">17</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${temp}</var>
+<arg>${i} * 10</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220707 11:45:30.514" level="INFO">${temp} = 170</msg>
+<status status="PASS" starttime="20220707 11:45:30.512" endtime="20220707 11:45:30.514"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Scroll Element Into View</arg>
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath:(//a[@class='app-link'])[${temp}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220707 11:45:30.515" endtime="20220707 11:45:30.887"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:30.515" endtime="20220707 11:45:30.888"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 11:45:31.894" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220707 11:45:30.888" endtime="20220707 11:45:31.894"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:30.512" endtime="20220707 11:45:31.894"/>
+</iter>
+<status status="PASS" starttime="20220707 11:45:08.552" endtime="20220707 11:45:31.894"/>
+</for>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://a[contains(text(),"${Title}")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220707 11:45:31.896" level="INFO">Clicking element 'xpath://a[contains(text(),"Lorem_ipsum")]'.</msg>
+<status status="PASS" starttime="20220707 11:45:31.894" endtime="20220707 11:45:32.140"/>
+</kw>
+<status status="PASS" starttime="20220707 11:45:06.507" endtime="20220707 11:45:32.140"/>
+</kw>
+<status status="PASS" starttime="20220707 11:44:48.409" endtime="20220707 11:45:32.141"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220707 11:45:32.142" endtime="20220707 11:45:34.502"/>
+</kw>
+<status status="PASS" starttime="20220707 11:44:43.731" endtime="20220707 11:45:34.503"/>
+</test>
+<kw name="Stop Remote Server" library="SikuliLibrary" type="TEARDOWN">
+<doc>Stops the remote server.</doc>
+<msg timestamp="20220707 11:45:34.520" level="INFO">Robot Framework remote server stopping</msg>
+<status status="PASS" starttime="20220707 11:45:34.507" endtime="20220707 11:45:34.520"/>
+</kw>
+<doc>Testing To upload Docs</doc>
+<status status="PASS" starttime="20220707 11:44:39.114" endtime="20220707 11:45:34.520"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Upload Test">Upload Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220707 11:44:39.108" level="ERROR">Taking listener 'allure_robotframework' into use failed: Importing listener 'allure_robotframework' failed: ModuleNotFoundError: No module named 'allure_robotframework'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\PreethamKumarB\Desktop\RoverAutomation\tests
+  C:\Python310\python310.zip
+  C:\Python310\DLLs
+  C:\Python310\lib
+  C:\Python310
+  C:\Users\PreethamKumarB\AppData\Roaming\Python\Python310\site-packages
+  C:\Python310\lib\site-packages</msg>
+<msg timestamp="20220707 11:44:39.376" level="ERROR">Error in file 'C:\Users\PreethamKumarB\Desktop\RoverAutomation\tests\upload_test.robot' on line 7: Importing library 'AllureReportLibrary' failed: ModuleNotFoundError: No module named 'AllureListener'
+Traceback (most recent call last):
+  File "C:\Python310\lib\site-packages\AllureReportLibrary\__init__.py", line 2, in &lt;module&gt;
+    from AllureListener import *
+PYTHONPATH:
+  C:\Users\PreethamKumarB\Desktop\RoverAutomation\tests
+  C:\Python310\python310.zip
+  C:\Python310\DLLs
+  C:\Python310\lib
+  C:\Python310
+  C:\Users\PreethamKumarB\AppData\Roaming\Python\Python310\site-packages
+  C:\Python310\lib\site-packages</msg>
+</errors>
+</robot>
